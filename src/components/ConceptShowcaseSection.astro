@@ -1,0 +1,51 @@
+---
+const concepts = [
+	{
+		title: 'Website Design Concept',
+		position: 'left center',
+	},
+	{
+		title: 'Brand Identity Concept',
+		position: 'center center',
+	},
+	{
+		title: 'Marketing Dashboard UI',
+		position: 'right center',
+	},
+	{
+		title: 'AI Platform Concept',
+		position: 'center top',
+	},
+] as const;
+---
+
+<section class="bg-[#050816] py-10 text-white lg:py-0">
+	<div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-[32px] xl:px-[24px]">
+		<div class="mx-auto max-w-[760px] text-center">
+			<h2 class="font-canva whitespace-pre-wrap break-normal leading-normal text-white caret-white text-[2rem] font-bold text-center">
+				Concept Showcase
+			</h2>
+		</div>
+
+		<div class="mt-16 grid gap-6 md:grid-cols-2 lg:gap-8">
+			{concepts.map((concept) => (
+				<article class="group relative min-h-[270px] overflow-hidden rounded-[20px] border border-white/6 bg-[#101424] shadow-[0_18px_60px_rgba(0,0,0,0.35)]">
+					<img
+						src="/img/nexvora-hero-img.webp"
+						alt={concept.title}
+						class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+						style={`object-position: ${concept.position};`}
+					/>
+					<div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,8,22,0.12)_0%,rgba(5,8,22,0.78)_100%)]"></div>
+					<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_36%)]"></div>
+
+					<div class="absolute inset-x-0 bottom-0 p-6 sm:p-7">
+						<h3 class="max-w-[18ch] text-[clamp(1.05rem,1.1vw,1.45rem)] font-medium leading-[1.15] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
+							{concept.title}
+						</h3>
+					</div>
+				</article>
+			))}
+		</div>
+	</div>
+</section>

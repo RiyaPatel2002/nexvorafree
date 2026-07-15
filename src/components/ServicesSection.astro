@@ -1,0 +1,154 @@
+---
+const services = [
+	{
+		title: "Performance Marketing",
+		description:
+			"Google Ads · Meta Ads · LinkedIn Ads · YouTube Ads · Remarketing · SEO",
+		tone: "text-cyan-400",
+		icon: "target",
+	},
+	{
+		title: "Website Development",
+		description:
+			"Corporate Websites · Landing Pages · E-commerce · Custom Platforms",
+		tone: "text-blue-400",
+		icon: "globe",
+	},
+	{
+		title: "AI Solutions",
+		description:
+			"AI Chatbots · CRM Automation · WhatsApp Automation · AI Workflows",
+		tone: "text-violet-400",
+		icon: "chip",
+	},
+	{
+		title: "Branding",
+		description: "Logo Design · Brand Identity · Company Profile",
+		tone: "text-amber-300",
+		icon: "palette",
+	},
+	{
+		title: "Creative Studio",
+		description:
+			"Photography · Commercial Shoots · Drone · Corporate Films · Podcast Production",
+		tone: "text-pink-400",
+		icon: "camera",
+	},
+	{
+		title: "Software Development",
+		description: "CRM · ERP · Business Software · Dashboards",
+		tone: "text-emerald-400",
+		icon: "code",
+	},
+	{
+		title: "Government Digital Solutions",
+		description:
+			"Digital Awareness Campaigns · Communication Strategy · Vendor Outreach Support",
+		tone: "text-orange-400",
+		icon: "government",
+	},
+	{
+		title: "Business Consulting",
+		description:
+			"Growth Strategy · Digital Transformation · Sales Funnel Planning",
+		tone: "text-teal-400",
+		icon: "growth",
+	},
+] as const;
+
+const iconMap = {
+	target: `
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+			<circle cx="12" cy="12" r="9"></circle>
+			<circle cx="12" cy="12" r="5"></circle>
+			<circle cx="12" cy="12" r="2"></circle>
+		</svg>
+	`,
+	globe: `
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+			<circle cx="12" cy="12" r="9"></circle>
+			<path d="M3 12h18"></path>
+			<path d="M12 3c3 3.2 4.5 6.1 4.5 9s-1.5 5.8-4.5 9c-3-3.2-4.5-6.1-4.5-9S9 6.2 12 3Z"></path>
+		</svg>
+	`,
+	chip: `
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+			<rect x="6" y="6" width="12" height="12" rx="2"></rect>
+			<path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"></path>
+			<rect x="9" y="9" width="6" height="6" rx="1"></rect>
+		</svg>
+	`,
+	palette: `
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+			<path d="M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 2-2 1.5 1.5 0 0 1 1.5-1.5H17a4 4 0 0 0 4-4A10.5 10.5 0 0 0 12 3Z"></path>
+			<circle cx="8" cy="10" r="1"></circle>
+			<circle cx="12" cy="8" r="1"></circle>
+			<circle cx="16" cy="10" r="1"></circle>
+		</svg>
+	`,
+	camera: `
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+			<path d="M4 7h3l2-3h6l2 3h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"></path>
+			<circle cx="12" cy="13" r="3.5"></circle>
+		</svg>
+	`,
+	code: `
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+			<path d="m8 6-6 6 6 6"></path>
+			<path d="m16 6 6 6-6 6"></path>
+			<path d="m14 4-4 16"></path>
+		</svg>
+	`,
+	government: `
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+			<path d="M4 10h16"></path>
+			<path d="M6 10V8h12v2"></path>
+			<path d="M7 10v8M11 10v8M13 10v8M17 10v8"></path>
+			<path d="M4 18h16"></path>
+			<path d="M12 4 4 8h16Z"></path>
+		</svg>
+	`,
+	growth: `
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+			<path d="M4 16l6-6 4 4 6-8"></path>
+			<path d="M16 6h4v4"></path>
+		</svg>
+	`,
+} as const;
+---
+
+<section class="bg-[#050816] py-0 text-white lg:py-0">
+	<h2
+		class="font-canva whitespace-pre-wrap break-normal leading-normal text-white caret-white text-[2rem] font-bold text-center"
+	>
+		Our Services
+	</h2>
+	<div
+		class="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 lg:px-8 lg:py-5"
+	>
+		<div class="mt-10 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
+			{
+				services.map((service) => (
+					<article class="rounded-[18px] border border-white/8 bg-[#171a2a] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition duration-200 hover:-translate-y-1 hover:border-white/12 hover:bg-[#1a1d2f]">
+						<div
+							class={` ${service.tone}`}
+						>
+							<div
+								class="h-8 w-8"
+								set:html={iconMap[service.icon]}
+							/>
+						</div>
+
+						<h3 class="mt-5 text-[20px] font-bold leading-[1.1] text-white">
+							{service.title}
+						</h3>
+
+						<p class="mt-4 max-w-[24ch] text-[1.04rem] leading-[1.22] text-slate-300/75">
+							{service.description}
+						</p>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>
