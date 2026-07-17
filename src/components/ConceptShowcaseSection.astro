@@ -2,24 +2,28 @@
 const concepts = [
 	{
 		title: 'Website Design Concept',
+		image: '/img/img1.webp',
 		position: 'left center',
 	},
 	{
 		title: 'Brand Identity Concept',
+		image: '/img/img2.webp',
 		position: 'center center',
 	},
 	{
 		title: 'Marketing Dashboard UI',
+		image: '/img/img3.webp',
 		position: 'right center',
 	},
 	{
 		title: 'AI Platform Concept',
+		image: '/img/img4.webp',
 		position: 'center top',
 	},
 ] as const;
 ---
 
-<section class="bg-[#050816] py-10 text-white lg:py-0">
+<section data-reveal class="bg-[#0c1220] py-10 text-white lg:py-0">
 	<div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-[32px] xl:px-[24px]">
 		<div class="mx-auto max-w-[760px] text-center">
 			<h2 class="font-canva whitespace-pre-wrap break-normal leading-normal text-white caret-white text-[2rem] font-bold text-center">
@@ -31,7 +35,7 @@ const concepts = [
 			{concepts.map((concept) => (
 				<article class="group relative min-h-[270px] overflow-hidden rounded-[20px] border border-white/6 bg-[#101424] shadow-[0_18px_60px_rgba(0,0,0,0.35)]">
 					<img
-						src="/img/nexvora-hero-img.webp"
+						src={concept.image}
 						alt={concept.title}
 						class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
 						style={`object-position: ${concept.position};`}

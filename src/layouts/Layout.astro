@@ -13,6 +13,9 @@ import '../style/global.css';
 			href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
 			rel="stylesheet"
 		/>
+		<script is:inline>
+			document.documentElement.classList.add('js');
+		</script>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
@@ -20,5 +23,36 @@ import '../style/global.css';
 	</head>
 	<body class="relative m-0 min-h-screen overflow-x-hidden bg-[#0c1220] text-slate-50 antialiased">
 		<slot />
+		<script is:inline>
+			const revealItems = document.querySelectorAll('[data-reveal]');
+			const isSmallScreen = window.matchMedia('(max-width: 767px)').matches;
+
+			revealItems.forEach((item, index) => {
+				const staggerStep = isSmallScreen ? 70 : 90;
+				const maxDelay = isSmallScreen ? 350 : 540;
+				item.style.setProperty('--reveal-delay', `${Math.min(index * staggerStep, maxDelay)}ms`);
+			});
+
+			if (!('IntersectionObserver' in window)) {
+				revealItems.forEach((item) => item.classList.add('is-visible'));
+			} else {
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add('is-visible');
+								observer.unobserve(entry.target);
+							}
+						});
+					},
+					{
+						threshold: isSmallScreen ? 0.1 : 0.16,
+						rootMargin: isSmallScreen ? '0px 0px -14% 0px' : '0px 0px -8% 0px',
+					},
+				);
+
+				revealItems.forEach((item) => observer.observe(item));
+			}
+		</script>
 	</body>
 </html>
