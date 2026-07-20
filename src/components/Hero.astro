@@ -1,3 +1,8 @@
+---
+const consultationHref = "";
+const servicesHref = "#services";
+---
+
 <section
 	data-reveal
 	class="relative md:min-h-screen overflow-hidden bg-slate-950 pt-[88px] text-white sm:pt-[96px] lg:pt-[104px]"
@@ -44,19 +49,19 @@
 			</p>
 
 			<div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-				<button
-					type="button"
+				<a
 					class="inline-flex items-center justify-center rounded-full bg-[linear-gradient(90deg,#2563ff_0%,#18c0e0_100%)] px-5 py-3 text-[1.05rem] font-semibold text-white shadow-[0_16px_30px_rgba(25,113,235,0.28)] transition duration-200 hover:-translate-y-px hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white/80"
+					href={consultationHref}
 				>
 					Book Free Consultation
-				</button>
+				</a>
 
-				<button
-					type="button"
+				<a
 					class="inline-flex items-center justify-center rounded-full border border-white/18 bg-white/4 px-10 py-3 text-[1.05rem] font-semibold text-white/95 backdrop-blur-[2px] transition duration-200 hover:border-white/26 hover:bg-white/8 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white/80"
+					href={servicesHref}
 				>
 					Explore Services
-				</button>
+				</a>
 			</div>
 		</div>
 	</div>

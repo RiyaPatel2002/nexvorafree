@@ -1,3 +1,19 @@
+---
+const serviceLinks = [
+	{ label: "Performance Marketing", href: "#performance-marketing" },
+	{ label: "Website Development", href: "#website-development" },
+	{ label: "AI Solutions", href: "#ai-solutions" },
+	{ label: "Branding", href: "#branding" },
+] as const;
+
+const solutionLinks = [
+	{ label: "Creative Studio", href: "#creative-studio" },
+	{ label: "Software Development", href: "#software-development" },
+	{ label: "Government Solutions", href: "#government-digital-solutions" },
+	{ label: "Business Consulting", href: "#business-consulting" },
+] as const;
+---
+
 <footer data-reveal class="border-t border-white/8 bg-[#0c1220] text-white">
 	<div class="mx-auto max-w-7xl px-4 py-16 lg:px-8 lg:py-14">
 		<div class="grid gap-12 md:grid-cols-2 xl:grid-cols-4 lg:gap-10">
@@ -12,22 +28,36 @@
 			</div>
 
 			<nav aria-label="Services">
-				<h3 class="text-[18px] font-bold text-white">Services</h3>
+				<h3 class="text-[18px] font-bold text-white">
+					<a class="transition duration-200 hover:text-cyan-300" href="#services">Services</a>
+				</h3>
 				<ul class="mt-4 space-y-2 text-[16px] leading-[1.15] text-slate-300/65">
-					<li>Performance Marketing</li>
-					<li>Website Development</li>
-					<li>AI Solutions</li>
-					<li>Branding</li>
+					{
+						serviceLinks.map((link) => (
+							<li>
+								<a class="transition duration-200 hover:text-white" href={link.href}>
+									{link.label}
+								</a>
+							</li>
+						))
+					}
 				</ul>
 			</nav>
 
 			<nav aria-label="Solutions">
-				<h3 class="text-[18px] font-bold text-white">Solutions</h3>
+				<h3 class="text-[18px] font-bold text-white">
+					<a class="transition duration-200 hover:text-cyan-300" href="#services">Solutions</a>
+				</h3>
 				<ul class="mt-4 space-y-2 text-[16px] leading-[1.15] text-slate-300/65">
-					<li>Creative Studio</li>
-					<li>Software Development</li>
-					<li>Government Solutions</li>
-					<li>Business Consulting</li>
+					{
+						solutionLinks.map((link) => (
+							<li>
+								<a class="transition duration-200 hover:text-white" href={link.href}>
+									{link.label}
+								</a>
+							</li>
+						))
+					}
 				</ul>
 			</nav>
 
@@ -40,12 +70,22 @@
 						</a>
 					</li>
 					<li>
-						<a class="transition duration-200 hover:text-white" href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+						<a
+							class="transition duration-200 hover:text-white"
+							href="https://www.linkedin.com"
+							target="_blank"
+							rel="noreferrer"
+						>
 							LinkedIn
 						</a>
 					</li>
 					<li>
-						<a class="transition duration-200 hover:text-white" href="https://www.instagram.com" target="_blank" rel="noreferrer">
+						<a
+							class="transition duration-200 hover:text-white"
+							href="https://www.instagram.com"
+							target="_blank"
+							rel="noreferrer"
+						>
 							Instagram
 						</a>
 					</li>

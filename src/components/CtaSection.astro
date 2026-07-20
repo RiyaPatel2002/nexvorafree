@@ -1,3 +1,8 @@
+---
+const consultationHref = "mailto:hello@nexvora.com?subject=Book%20Consultation%20with%20NEXVORA";
+const talkHref = "mailto:hello@nexvora.com?subject=Let%27s%20Talk%20with%20NEXVORA";
+---
+
 <section data-reveal class="bg-[#0c1220] py-10 text-white lg:py-28">
 	<div class="mx-auto max-w-5xl px-4 sm:px-8 lg:px-[52px] xl:px-[64px]">
 		<div class="rounded-[28px] border border-white/8 bg-[radial-gradient(circle_at_bottom_left,rgba(105,54,255,0.22),transparent_35%),radial-gradient(circle_at_top_right,rgba(20,128,255,0.22),transparent_35%),linear-gradient(180deg,#111325_0%,#0b1020_100%)] px-6 lg:py-16 py-10 shadow-[0_24px_80px_rgba(0,0,0,0.38)] sm:px-10 lg:py-14 lg:px-16">
@@ -12,19 +17,19 @@
 				</p>
 
 				<div class="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-					<button
-						type="button"
+					<a
 						class="inline-flex items-center justify-center rounded-full bg-[linear-gradient(90deg,#2f5dff_0%,#19c4df_100%)] px-8 py-3 text-[1.05rem] font-semibold text-white shadow-[0_16px_30px_rgba(25,113,235,0.28)] transition duration-200 hover:-translate-y-px hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white/80"
+						href={consultationHref}
 					>
 						Book Consultation
-					</button>
+					</a>
 
-					<button
-						type="button"
+					<a
 						class="inline-flex items-center justify-center rounded-full border border-white/18 bg-white/4 px-8 py-3 text-[1.05rem] font-semibold text-white/95 backdrop-blur-[2px] transition duration-200 hover:border-white/26 hover:bg-white/8 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white/80"
+						href={talkHref}
 					>
 						Let&apos;s Talk
-					</button>
+					</a>
 				</div>
 			</div>
 		</div>

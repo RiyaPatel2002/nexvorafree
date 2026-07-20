@@ -1,6 +1,7 @@
 ---
 const services = [
 	{
+		slug: "performance-marketing",
 		title: "Performance Marketing",
 		description:
 			"Google Ads · Meta Ads · LinkedIn Ads · YouTube Ads · Remarketing · SEO",
@@ -8,6 +9,7 @@ const services = [
 		icon: "target",
 	},
 	{
+		slug: "website-development",
 		title: "Website Development",
 		description:
 			"Corporate Websites · Landing Pages · E-commerce · Custom Platforms",
@@ -15,6 +17,7 @@ const services = [
 		icon: "globe",
 	},
 	{
+		slug: "ai-solutions",
 		title: "AI Solutions",
 		description:
 			"AI Chatbots · CRM Automation · WhatsApp Automation · AI Workflows",
@@ -22,12 +25,14 @@ const services = [
 		icon: "chip",
 	},
 	{
+		slug: "branding",
 		title: "Branding",
 		description: "Logo Design · Brand Identity · Company Profile",
 		tone: "text-amber-300",
 		icon: "palette",
 	},
 	{
+		slug: "creative-studio",
 		title: "Creative Studio",
 		description:
 			"Photography · Commercial Shoots · Drone · Corporate Films · Podcast Production",
@@ -35,12 +40,14 @@ const services = [
 		icon: "camera",
 	},
 	{
+		slug: "software-development",
 		title: "Software Development",
 		description: "CRM · ERP · Business Software · Dashboards",
 		tone: "text-emerald-400",
 		icon: "code",
 	},
 	{
+		slug: "government-digital-solutions",
 		title: "Government Digital Solutions",
 		description:
 			"Digital Awareness Campaigns · Communication Strategy · Vendor Outreach Support",
@@ -48,6 +55,7 @@ const services = [
 		icon: "government",
 	},
 	{
+		slug: "business-consulting",
 		title: "Business Consulting",
 		description:
 			"Growth Strategy · Digital Transformation · Sales Funnel Planning",
@@ -117,7 +125,11 @@ const iconMap = {
 } as const;
 ---
 
-<section data-reveal class="bg-[#0c1220] py-0 text-white lg:py-0">
+<section
+	id="services"
+	data-reveal
+	class="scroll-mt-24 bg-[#0c1220] py-0 text-white lg:py-0"
+>
 	<h2
 		class="font-canva whitespace-pre-wrap break-normal leading-normal text-white caret-white text-[2rem] font-bold text-center"
 	>
@@ -129,7 +141,10 @@ const iconMap = {
 		<div class="mt-10 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
 			{
 				services.map((service) => (
-					<article class="rounded-[18px] border border-white/8 bg-[#151725] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition duration-200 hover:-translate-y-1 hover:border-white/12 hover:bg-[#1a1d2f]">
+					<article
+						id={service.slug}
+						class="scroll-mt-24 rounded-[18px] border border-white/8 bg-[#151725] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition duration-200 hover:-translate-y-1 hover:border-white/12 hover:bg-[#1a1d2f]"
+					>
 						<div
 							class={` ${service.tone}`}
 						>
